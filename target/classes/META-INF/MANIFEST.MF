@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: sanjay jain
+Build-Jdk: 15.0.1
+Implementation-Title: jsf-primefaces-datatable
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.codenotfound
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/jsf-primefaces-datatable
+Created-By: Maven Integration for Eclipse
+

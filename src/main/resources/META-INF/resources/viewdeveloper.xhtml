@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>View Developers</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+
+	<p:panel>
+		
+		<h3> Update Skills </h3>
+		<p:outputLabel>First Name : </p:outputLabel>
+		<p:inputText value="#{developer.firstName}" disabled="true" />
+		
+		<br/><br/>
+		<p:outputLabel>Last Name : </p:outputLabel>
+		<p:inputText value="#{developer.lastName}" disabled="true" />
+		
+		<br/><br/>
+		<p:outputLabel>Email : </p:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<p:inputText value="#{developer.email}" disabled="true" />
+		
+		<br/><br/>
+		<p:outputLabel>Skills : </p:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<p:selectOneMenu value="#{developer.skills}" >
+						<f:selectItem itemValue="Java" itemLabel="Java"></f:selectItem>
+						<f:selectItem itemValue="Android" itemLabel="Android"></f:selectItem>
+						<f:selectItem itemValue="AWS" itemLabel="AWS"></f:selectItem>
+						<f:selectItem itemValue="DB Admin" itemLabel="DB Admin"></f:selectItem>
+					</p:selectOneMenu>
+			
+		<br/><br/>
+		<h:commandButton type="submit"  value="Add Skill" action="#{developerView.update(developer)}"></h:commandButton>
+		
+	</p:panel>
+
+</h:form>
+
+</h:body>
+</html>

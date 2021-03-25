@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>Developers</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<p:panel>
+			<h2>Developers </h2>
+	
+			<p:dataTable var="dev" value="#{developerView.developers}">
+    <p:column headerText="First Name" >
+      <h:outputText value="#{dev.firstName}" />
+    </p:column>
+
+    <p:column headerText="Last Name">
+      <h:outputText value="#{dev.lastName}" />
+    </p:column>
+
+    <p:column headerText="Skills">
+      <h:outputText value="#{dev.skills}" />
+    </p:column>
+	
+	<p:column headerText="Action">
+      <h:commandLink value="View" action="#{developerView.view(dev)}">
+      </h:commandLink>
+      
+    </p:column>
+
+  </p:dataTable>
+				
+		</p:panel>
+	</h:form>
+		 
+		
+		<h:form>
+		
+		<p:panel>
+		
+			<h3> Add a Developer </h3>
+			<p:outputLabel>First Name : </p:outputLabel>
+			<p:inputText value="#{developerView.developer.firstName}" />
+			
+			<br  /><br  />
+			
+			<p:outputLabel>Last Name : </p:outputLabel>
+			<p:inputText value="#{developerView.developer.lastName}" />
+			
+			<br  /><br  />
+			<p:outputLabel>Email : </p:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<p:inputText value="#{developerView.developer.email}" />
+			
+			<br  /><br  />
+			<p:outputLabel>Skills : </p:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<p:selectOneMenu value="#{developerView.developer.skills}" >
+						<f:selectItem itemValue="Java" itemLabel="Java"></f:selectItem>
+						<f:selectItem itemValue="Android" itemLabel="Android"></f:selectItem>
+						<f:selectItem itemValue="AWS" itemLabel="AWS"></f:selectItem>
+						<f:selectItem itemValue="DB Admin" itemLabel="DB Admin"></f:selectItem>
+					</p:selectOneMenu>
+			
+			<br  /><br  />
+			<h:commandButton type="submit" value="Create" action="#{developerView.savedev()}"></h:commandButton>
+			
+		</p:panel>
+	
+	</h:form>
+		
+</h:body>
+</html>
